@@ -6,13 +6,26 @@ def listMenu(options):
     for i, (key, value) in enumerate(options.items()):
         print("{} - {} (+${:.2f})".format(i, key, value))
 
+def userInput(options):
+    # Check the input is a number - integer
+    while True:
+        try:
+            selection = int(input("Input your choice: "))
+            # Check that the number is a menu option.
+            if 0 <= selection < len(options):
+                return selection
+            print("Please enter a valid choice.")
+        except ValueError:
+            print("Please enter a number")
+
+
 print("Welcome to Pete's a Pizza!")
 # size
 sizeOptions = {"New Yorker":5.00,
                "Large":3.00,
                "Small":0.00}
 listMenu(sizeOptions)
-size = input("What size pizza would you like? ")
+size = userInput(sizeOptions)
 # topping
 toppingOptions = {"Meatlovers":0.0,
                   "Pepperoni":0.0,
