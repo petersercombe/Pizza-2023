@@ -47,12 +47,30 @@ while True:
         break
 
 # sides
-
+sides = []
+while True:
+    sides.append(userInput(sideOptions))
+    if input("Would you like another side? y/n: ").lower() == "y":
+        continue
+    else:
+        break
 
 # drinks
-
+drinks = []
+while True:
+    drinks.append(userInput(drinkOptions))
+    if input("Would you like another side? y/n: ").lower() == "y":
+        continue
+    else:
+        break
 
 print("Your order is: ")
 for pizza in pizzas:
     print(pizza)
+for side in sides:
+    print(side)
+for drink in drinks:
+    print(drink)
+
+
 print("For a total of ${:.2f}".format(price) )
