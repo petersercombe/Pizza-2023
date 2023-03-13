@@ -1,7 +1,9 @@
 from flask import *
+from menu import *
 
 app = Flask("__main__")
 app.secret_key = "LKjskejdv9w9er8"
+
 
 @app.route("/")
 @app.route("/home")
@@ -9,10 +11,10 @@ app.secret_key = "LKjskejdv9w9er8"
 def home():
     return render_template("index.html")
 
-@app.route("/profile/<username>")
-def profile(username):
-    return f"Hello, {username}!"
 
+@app.route("/menu")
+def menu():
+    return render_template("menu.html", toppingOptions=toppingOptions)
 
 
 if __name__ == "__main__":

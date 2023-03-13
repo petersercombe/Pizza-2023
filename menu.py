@@ -2,14 +2,24 @@ sizeOptions = {"New Yorker": 9.00,
                "Large": 6.00,
                "Small": 4.00}
 
-toppingOptions = {"Meatlovers":0.0,
-                  "Pepperoni":0.0,
-                  "Vegan":3.0,
-                  "Vegorama":1.0,
-                  "Avocado":4.0,
-                  "Margherita":0.0,
-                  "Cheese":0.0,
-                  "Gourmet Fish Breath":15.0}
+toppingOptions = {"BBQ-Bonanza": {
+                    "title": "BBQ Bonanza",
+                    "price": 0.0,
+                    "kJ": 6850,
+                    "image": "web.BBQ-Bonanza.png",
+                    "description": "Classic pepperoni, premium beef, sliced leg ham, crispy bacon and mozzarella on a "
+                                   "smokey BBQ sauce base. Garnished with fresh herbs. "
+                    },
+                  "Karaage-Chicken": {
+                    "title": "Karaage Chicken",
+                    "price": 0.0,
+                    "kJ": 6470,
+                    "image": "web.Karaage_Chicken.png",
+                    "description": "Japanese crumbed Karaage chicken, avocado, onion, diced tomato and mozzarella on "
+                                   "a sweet Soy sauce base. Garnished with shallots and finished with Kewpie mayo, "
+                                   "sweet Soy sauce and a lemon wedge. "
+                    }
+                  }
 
 sauceOptions = {"BBQ": 0.0,
                 "Tomato": 0.0,
