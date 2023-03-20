@@ -5,8 +5,8 @@
 {% block content %}
 <br>
 <div class="btn-group btn-group-lg col-12" role="group" aria-label="Pickup or Delivery">
-  <button type="button" class="btn btn-danger">Pickup</button>
-  <button type="button" class="btn btn-primary">Delivery</button>
+  <a href="{{ url_for('menu', collection='pickup') }}" class="btn btn-danger">Pickup</a>
+  <a href="{{ url_for('menu', collection='delivery') }}" class="btn btn-primary">Delivery</a>
 </div>
 
 <!-- We'll insert a carousel or something here later -->
