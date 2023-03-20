@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}Customise Order{% endblock %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+        <!-- We'll insert an image of the pizza here later -->
+
+
+        </div>
+        <div class="col-lg-6">
+            <form action="/cart" method="post">
+
+                <!-- Form field to select size option -->
+                <div class="mb-3">
+                  <label for="size" class="form-label">Size:</label>
+                    <select id="size" name="size" class="form-select" aria-label="Default select example">
+                        {% for title, price in sizeOptions.items() %}
+                        <option value="{{title}}">{{title}}
+                            {% if price != 0.0 %}
+                            {{ " (+${:.2f})".format(price) }}
+                            {% endif %}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- Form field to select base option -->
+
+
+                <!-- Form field to select sauce option -->
+
+
+                <br>
+                <!-- Form button to submit the selections -->
+                <div class="d-grid gap-2 col-6">
+                    <button class="btn btn-primary" type="submit">Add to Cart</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
