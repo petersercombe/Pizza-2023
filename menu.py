@@ -1,10 +1,10 @@
-sizeOptions = {"New Yorker": 9.00,
-               "Large": 6.00,
-               "Small": 4.00}
+sizeOptions = {"New Yorker": 3.00,
+               "Large": 0.00,
+               "Small": -2.00}
 
 toppingOptions = {"BBQ-Bonanza": {
                     "title": "BBQ Bonanza",
-                    "price": 0.0,
+                    "price": 6.0,
                     "kJ": 6850,
                     "image": "web.BBQ-Bonanza.png",
                     "description": "Classic pepperoni, premium beef, sliced leg ham, crispy bacon and mozzarella on a "
@@ -12,12 +12,26 @@ toppingOptions = {"BBQ-Bonanza": {
                     },
                   "Karaage-Chicken": {
                     "title": "Karaage Chicken",
-                    "price": 0.0,
+                    "price": 6.0,
                     "kJ": 6470,
                     "image": "web.Karaage_Chicken.png",
                     "description": "Japanese crumbed Karaage chicken, avocado, onion, diced tomato and mozzarella on "
                                    "a sweet Soy sauce base. Garnished with shallots and finished with Kewpie mayo, "
                                    "sweet Soy sauce and a lemon wedge. "
+                    },
+                  "Reef-Beef": {
+                      "title": "Reef & Beef",
+                      "price": 7.0,
+                      "kJ": 6030,
+                      "image": "web.Reef-_-Beef.png",
+                      "description": "Something fishy for your sensory delight/offense."
+                    },
+                    "Supremo": {
+                        "title": "Supremo",
+                        "price": 9.0,
+                        "kJ": 7800,
+                        "image": "web.Supremo.png",
+                        "description": "An option for our vegan friends. Vegan ham (cardboard) topped with soft Vegan cheese (paper) and a side of fried lettuce (tastes like cardboard)."
                     }
                   }
 

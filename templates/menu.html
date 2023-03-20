@@ -13,7 +13,12 @@
       <img src="/static/{{ value['image'] }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ value["title"] }}</h5>
+        <p class="small text-muted">{{ 'From ${:.2f} | {}kJ'.format(value["price"], value["kJ"]) }}</p>
         <p class="card-text">{{ value["description"] }}</p>
+
+      </div>
+      <div class="card-footer">
+          <a href="#" class="btn btn-primary d-grid gap-2">Add</a>
       </div>
     </div>
   </div>
