@@ -1,6 +1,6 @@
-sizeOptions = {"New Yorker": 3.00,
-               "Large": 0.00,
-               "Small": -2.00}
+sizeOptions = {"New Yorker": 5.00,
+               "Large": 2.00,
+               "Small": 0.00}
 
 toppingOptions = {"BBQ-Bonanza": {
                     "title": "BBQ Bonanza",

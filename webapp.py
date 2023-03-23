@@ -20,7 +20,7 @@ def menu():
 @app.route("/customise", methods=['GET', "POST"])
 def customise():
 
-    return render_template("customise.html",
+    return render_template("customisations.html",
                            sizeOptions=sizeOptions,
                            sauceOptions=sauceOptions,
                            baseOptions=baseOptions

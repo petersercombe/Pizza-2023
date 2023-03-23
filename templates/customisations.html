@@ -17,7 +17,7 @@
                 <!-- Form field to select size option -->
                 <div class="mb-3">
                   <label for="size" class="form-label">Size:</label>
-                    <select id="size" name="size" class="form-select" aria-label="Default select example">
+                    <select id="size" name="size" class="form-select">
                         {% for title, price in sizeOptions.items() %}
                         <option value="{{title}}">{{title}}
                             {% if price != 0.0 %}
@@ -28,10 +28,34 @@
                     </select>
                 </div>
                 <!-- Form field to select base option -->
-
+                <div class="mb-3">
+                  <label for="base" class="form-label">Base:</label>
+                    <select id="base" name="base" class="form-select">
+                        {% for title, price in baseOptions.items() %}
+                        <option value="{{title}}">{{title}}
+                            {% if price != 0.0 %}
+                            {{ " (+${:.2f})".format(price) }}
+                            {% endif %}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
 
                 <!-- Form field to select sauce option -->
+                <div class="mb-3">
+                    Sauce:
+                    <br>
+                    {% for title, price in sauceOptions.items() %}
+                        <input type="radio" class="btn-check" name="sauce" value="{{title}}" id="{{title}}" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="{{title}}">
+                            {{title}}
+                            {% if price != 0.0 %}
+                            {{ " (+${:.2f})".format(price) }}
+                            {% endif %}
+                        </label>
+                    {% endfor %}
 
+                </div>
 
                 <br>
                 <!-- Form button to submit the selections -->
