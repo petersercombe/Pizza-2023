@@ -8,6 +8,9 @@
     <div class="row">
         <div class="col-lg-6">
         <!-- We'll insert an image of the pizza here later -->
+            <h2>{{ pizzaDetails["title"] }}</h2>
+            <img src="/static/{{ pizzaDetails['image'] }}" class="img-thumbnail" width="100%">
+            <p>{{ pizzaDetails['description'] }}</p>
 
 
         </div>
@@ -47,7 +50,7 @@
                     <br>
                     {% for title, price in sauceOptions.items() %}
                         <input type="radio" class="btn-check" name="sauce" value="{{title}}" id="{{title}}" autocomplete="off" checked>
-                        <label class="btn btn-outline-success" for="{{title}}">
+                        <label style="margin-top:5px;" class="btn btn-outline-success" for="{{title}}">
                             {{title}}
                             {% if price != 0.0 %}
                             {{ " (+${:.2f})".format(price) }}

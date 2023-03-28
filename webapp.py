@@ -19,11 +19,12 @@ def menu():
 
 @app.route("/customise", methods=['GET', "POST"])
 def customise():
-
+    pizza = request.args["pizza"]
     return render_template("customisations.html",
                            sizeOptions=sizeOptions,
                            sauceOptions=sauceOptions,
-                           baseOptions=baseOptions
+                           baseOptions=baseOptions,
+                           pizzaDetails=toppingOptions[pizza]
                            )
 
 if __name__ == "__main__":
