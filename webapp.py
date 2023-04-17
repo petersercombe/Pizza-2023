@@ -33,7 +33,7 @@ def customise():
 @app.route("/cart", methods=["GET", "POST"])
 def cart():
     if request.method == "GET":
-        return render_template("cart.html", order=session['order'])
+        return render_template("cart.html", order=session['order'], toppingOptions=toppingOptions)
     else:
         if 'order' not in session:
             session['order'] = []

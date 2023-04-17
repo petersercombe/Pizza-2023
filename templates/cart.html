@@ -6,35 +6,38 @@
 <br>
 <!--- Collection method: {{ collection }} --->
 <br>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-
-{% for item in order %}
-
-  <div class="col">
-    <div class="card h-100">
-      <!--- <img src="/static/ 'image' " class="card-img-top" alt="..."> --->
-      <div class="card-body">
-        <h5 class="card-title">{{ item[0] }}</h5>
-        <small>{{ "${:.2f}".format(item[item|length - 1]) }}</small>
-        <p class="card-text">
-          <ul>
-            {% for i in range(item|length - 2) %}
-            <li>{{ item[i+1] }}</li>
-            {% endfor %}
-          </ul>
-
-        </p>
-
-
-      </div>
-      <div class="card-footer">
-         <!--- <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary d-grid gap-2">Add</a> --->
+<div class="row">
+  <div class="col-8">
+  {% for item in order %}
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/static/{{ toppingOptions[item[0]]['image'] }} " class="card-img-top" alt="...">
+          <center>
+          <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary"><span class="material-symbols-outlined">edit</span></a>
+          <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-danger"><span class="material-symbols-outlined">delete</span></a>
+          </center>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ item[0] }}</h5>
+            <small>{{ "${:.2f}".format(item[item|length - 1]) }}</small>
+            <p class="card-text">
+              <ul style="margin-bottom: 0px">
+                {% for i in range(item|length - 2) %}
+                <li>{{ item[i+1] }}</li>
+                {% endfor %}
+              </ul>
+          </div>
+        </div>
       </div>
     </div>
+
+  {% endfor %}
   </div>
-
-{% endfor %}
-
+ <div class="col-4">
+    Total
+  </div>
 </div>
 
 
