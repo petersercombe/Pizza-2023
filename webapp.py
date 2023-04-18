@@ -4,8 +4,6 @@ from menu import *
 app = Flask("__main__")
 app.secret_key = "LKjskejdv9w9er8"
 
-global order
-order = []
 
 @app.route("/")
 @app.route("/home")
@@ -37,11 +35,15 @@ def cart():
     if request.method == "GET":
         return "Stuff"
     else:
-        order.append([request.form['pizza'],
+        if 'order' not in session:
+            session['order'] = []
+            print (session['order'])
+        session['order'].append([request.form['pizza'],
                       request.form['size'],
                       request.form['base'],
                       request.form['sauce']])
-        return order
+        session.modified = True
+        return session['order']
 
 
 if __name__ == "__main__":
