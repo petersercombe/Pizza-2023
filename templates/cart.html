@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<br>
+<!--- Collection method: {{ collection }} --->
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+{% for item in order %}
+
+  <div class="col">
+    <div class="card h-100">
+      <!--- <img src="/static/ 'image' " class="card-img-top" alt="..."> --->
+      <div class="card-body">
+        <h5 class="card-title">{{ item[0] }}</h5>
+        <small>{{ "${:.2f}".format(item[item|length - 1]) }}</small>
+        <p class="card-text">
+          <ul>
+            {% for i in range(item|length - 2) %}
+            <li>{{ item[i+1] }}</li>
+            {% endfor %}
+          </ul>
+
+        </p>
+
+
+      </div>
+      <div class="card-footer">
+         <!--- <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary d-grid gap-2">Add</a> --->
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div>
+
+
+
+
+
+{% endblock %}

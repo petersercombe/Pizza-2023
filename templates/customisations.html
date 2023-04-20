@@ -16,6 +16,8 @@
         </div>
         <div class="col-lg-6">
             <form action="/cart" method="post">
+                <!-- Hidden form field to collect which pizza this is -->
+                <input type="hidden" id="pizza" name="pizza" value="{{ pizza }}">
 
                 <!-- Form field to select size option -->
                 <div class="mb-3">
