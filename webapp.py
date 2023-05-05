@@ -15,7 +15,9 @@ def home():
 @app.route("/menu", methods=['GET'])
 def menu():
     collection = request.args['collection']
-    return render_template("menu.html", toppingOptions=toppingOptions, collection=collection)
+    return render_template("menu.html",
+                           foodMenu=foodMenu,
+                           collection=collection)
 
 
 @app.route("/customise", methods=['GET', "POST"])
@@ -37,17 +39,37 @@ def cart():
     else:
         if 'order' not in session:
             session['order'] = []
-        price = toppingOptions[request.form['pizza']]['price'] + \
-                sizeOptions[request.form['size']] + \
-                baseOptions[request.form['base']] + \
-                sauceOptions[request.form['sauce']]
-        session['order'].append([request.form['pizza'],
-                      request.form['size'],
-                      request.form['base'],
-                      request.form['sauce'],
-                      price])
+        try:
+            price = toppingOptions[request.form['pizza']]['price'] + \
+                    sizeOptions[request.form['size']] + \
+                    baseOptions[request.form['base']] + \
+                    sauceOptions[request.form['sauce']]
+            session['order'].append([request.form['pizza'],
+                                     request.form['size'],
+                                     request.form['base'],
+                                     request.form['sauce'],
+                                     price])
+
+        ### This was a bad idea
+        except:
+            pass
+        else:
+            item = request.form['item']
+            category = request.form['category']
+            price = category[item]['price']
+            session['order'].append([item, price])
+
+        # Up to here
+
         session.modified = True
         return redirect(url_for('cart'))
+
+
+@app.route('/remove/<item>')
+def remove(item):
+    session['order'].pop(int(item))
+    session.modified = True
+    return redirect(url_for('cart'))
 
 
 if __name__ == "__main__":

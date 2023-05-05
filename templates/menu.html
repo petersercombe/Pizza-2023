@@ -6,9 +6,12 @@
 <br>
 Collection method: {{ collection }}
 <br>
-<div class="row row-cols-1 row-cols-md-3 g-4">
 
-{% for key, value in toppingOptions.items() %}
+{% for category, stuff in foodMenu.items() %}
+
+<h1>{{ category }}</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+{% for key, value in stuff.items() %}
 
   <div class="col">
     <div class="card h-100">
@@ -20,17 +23,28 @@ Collection method: {{ collection }}
 
       </div>
       <div class="card-footer">
+        {% if category == 'toppingOptions' %}
           <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary d-grid gap-2">Add</a>
+        {% else %}
+          <form action="/cart" method="post">
+            <!-- Hidden form field to catch the category -->
+            <input type="hidden" id="category" name="category" value="sideOptions">
+            <input type="hidden" id="item" name="item" value="{{ key }}">
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+
+          </form>
+        {% endif %}
       </div>
     </div>
   </div>
 
+
+
 {% endfor %}
+  </div>
 
-</div>
-
-
-
-
+{% endfor %}
 
 {% endblock %}

@@ -2,7 +2,17 @@ sizeOptions = {"New Yorker": 5.00,
                "Large": 2.00,
                "Small": 0.00}
 
-toppingOptions = {"BBQ-Bonanza": {
+sauceOptions = {"BBQ": 0.0,
+                "Tomato": 0.0,
+                "Bechemal": 1.0,
+                "None": -1.0}
+
+baseOptions = {"Classic Crust":0.0,
+               "Deep Pan": 0.0,
+               "Thin 'n' Crispy":0.0,
+               "Gluten Free": 2.0}
+
+foodMenu = {'toppingOptions': {"BBQ-Bonanza": {
                     "title": "BBQ Bonanza",
                     "price": 6.0,
                     "kJ": 6850,
@@ -33,22 +43,39 @@ toppingOptions = {"BBQ-Bonanza": {
                         "image": "web.Supremo.png",
                         "description": "An option for our vegan friends. Vegan ham (cardboard) topped with soft Vegan cheese (paper) and a side of fried lettuce (tastes like cardboard)."
                     }
-                  }
+                  },
+    'sideOptions': {"Garlic bread": {
+                        "title": "Garlic Bread",
+                        "price": 3.0,
+                        "kJ": 3204,
+                        "image": "vegan-garlic-bread-3.webp",
+                        "description": "A warm bun with garlic butter on it"
+                    },
+               "Vegan Cheesy Garlic Bread": {
+                        "title": "Vegan Cheesy Garlic Bread",
+                        "price": 5.0,
+                        "kJ": 3204,
+                        "image": "vegan-garlic-bread-3.webp",
+                        "description": "The same as the normal garlic bread but with margarine and a price increase"
+                    },
+               "Meatballs": {
+                        "title": "Meatballs",
+                        "price": 2.0,
+                        "kJ": 1234,
+                        "image": "meatballs.webp",
+                        "description": "Balls made of meat."
+                    },
+               "Spud fireballs": {
+                        "title": "Spud Fireballs",
+                        "price": 4.0,
+                        "kJ": 4321,
+                        "image": "potato-on-fire-260nw-509633.webp",
+                        "description": "Mashed potato mixed with jalepeno, dipped in spicy batter and deep fried."
+                    }
+                }
 
-sauceOptions = {"BBQ": 0.0,
-                "Tomato": 0.0,
-                "Bechemal": 1.0,
-                "None": -1.0}
+}
 
-baseOptions = {"Classic Crust":0.0,
-               "Deep Pan": 0.0,
-               "Thin 'n' Crispy":0.0,
-               "Gluten Free": 2.0}
-
-sideOptions = {"Garlic bread": 3.0,
-               "Vegan Cheesy Garlic Bread": 5.0,
-               "Meatballs": 2.0,
-               "Spud fireballs": 3.0}
 
 drinkOptions = {"Coca-Cola": 2.0,
                 "Fanta": 2.0,
@@ -56,3 +83,8 @@ drinkOptions = {"Coca-Cola": 2.0,
                 "Diet Coke": 2.0,
                 "Bundaberg Brewed Ginger Beer": 3.0,
                 "Mount Franklin Still Water": 4.0}
+
+
+
+
+
