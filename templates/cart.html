@@ -16,21 +16,23 @@
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="/static/{{ toppingOptions[item[0]]['image'] }} " class="card-img-top" alt="...">
+          <img src="/static/{{ foodMenu[item[0]][item[1]]['image'] }} " class="card-img-top" alt="...">
           <center>
-          <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary"><span class="material-symbols-outlined">edit</span></a>
+            {% if item[0] == 'toppingOptions' %}
+          <a href="{{ url_for('customise', pizza=item[1]) }}" class="btn btn-primary"><span class="material-symbols-outlined">edit</span></a>
+            {% endif %}
           <a href="/remove/{{ loop.index - 1 }}" class="btn btn-danger"><span class="material-symbols-outlined">delete</span></a>
           </center>
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{ item[0] }}</h5>
+            <h5 class="card-title">{{ item[1] }}</h5>
             <small>{{ "${:.2f}".format(item[-1]) }}</small>
             {% set ns.total = ns.total + item[-1] %}
             <p class="card-text">
               <ul style="margin-bottom: 0px">
-                {% for i in range(item|length - 2) %}
-                <li>{{ item[i+1] }}</li>
+                {% for i in range(item|length - 3) %}
+                <li>{{ item[i+2] }}</li>
                 {% endfor %}
               </ul>
           </div>
@@ -47,10 +49,9 @@
       <div class="card-body">
         <h5 class="card-title">Payment</h5>
         <p class="card-text">Total = {{ "${:.2f}".format(ns.total) }}</p>
-
       </div>
       <div class="card-footer">
-          <a href="{{ url_for('customise', pizza=key) }}" class="btn btn-primary d-grid gap-2">Pay Now</a>
+          <a href="#" class="btn btn-primary d-grid gap-2">Pay Now</a>
       </div>
     </div>
   </div>

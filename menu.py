@@ -72,18 +72,24 @@ foodMenu = {'toppingOptions': {"BBQ-Bonanza": {
                         "image": "potato-on-fire-260nw-509633.webp",
                         "description": "Mashed potato mixed with jalepeno, dipped in spicy batter and deep fried."
                     }
+                },
+    'drinkOptions': {"Coca-Cola": {
+                        "title": "Coca-Cola",
+                        "price": 4.0,
+                        "kJ": 4321,
+                        "image": "potato-on-fire-260nw-509633.webp",
+                        "description": "Water, Sugar, and other ingredients"
+                    },
+                    "Fanta": {
+                        "title": "Fanta",
+                        "price": 4.0,
+                        "kJ": 4323,
+                        "image": "potato-on-fire-260nw-509633.webp",
+                        "description": "Water, Sugar, and other ingredients"
+                    }
                 }
 
 }
-
-
-drinkOptions = {"Coca-Cola": 2.0,
-                "Fanta": 2.0,
-                "Sprite": 2.0,
-                "Diet Coke": 2.0,
-                "Bundaberg Brewed Ginger Beer": 3.0,
-                "Mount Franklin Still Water": 4.0}
-
 
 
 

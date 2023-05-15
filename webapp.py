@@ -27,7 +27,7 @@ def customise():
                            sizeOptions=sizeOptions,
                            sauceOptions=sauceOptions,
                            baseOptions=baseOptions,
-                           pizzaDetails=toppingOptions[pizza],
+                           pizzaDetails=foodMenu['toppingOptions'][pizza],
                            pizza=pizza
                            )
 
@@ -35,33 +35,28 @@ def customise():
 @app.route("/cart", methods=["GET", "POST"])
 def cart():
     if request.method == "GET":
-        return render_template("cart.html", order=session['order'], toppingOptions=toppingOptions)
+        return render_template("cart.html", order=session['order'], foodMenu=foodMenu)
     else:
         if 'order' not in session:
             session['order'] = []
-        try:
-            price = toppingOptions[request.form['pizza']]['price'] + \
+        category = request.form['category']
+        if category == 'toppingOptions':
+            price = foodMenu['toppingOptions'][request.form['pizza']]['price'] + \
                     sizeOptions[request.form['size']] + \
                     baseOptions[request.form['base']] + \
                     sauceOptions[request.form['sauce']]
-            session['order'].append([request.form['pizza'],
+            session['order'].append([category,
+                                     request.form['pizza'],
                                      request.form['size'],
                                      request.form['base'],
                                      request.form['sauce'],
                                      price])
-
-        ### This was a bad idea
-        except:
-            pass
         else:
             item = request.form['item']
-            category = request.form['category']
-            price = category[item]['price']
-            session['order'].append([item, price])
-
-        # Up to here
-
+            price = foodMenu[category][item]['price']
+            session['order'].append([category, item, price])
         session.modified = True
+        print(session['order'])
         return redirect(url_for('cart'))
 
 

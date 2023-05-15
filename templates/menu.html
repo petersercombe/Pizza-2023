@@ -28,7 +28,7 @@ Collection method: {{ collection }}
         {% else %}
           <form action="/cart" method="post">
             <!-- Hidden form field to catch the category -->
-            <input type="hidden" id="category" name="category" value="sideOptions">
+            <input type="hidden" id="category" name="category" value="{{ category }}">
             <input type="hidden" id="item" name="item" value="{{ key }}">
             <div class="d-grid gap-2">
               <button class="btn btn-primary" type="submit">Add</button>
